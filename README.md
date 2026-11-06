@@ -52,4 +52,4 @@ Bug reports and pull requests are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md
 
 ## License
 
-GPL-3.0-only, see [LICENSE](LICENSE). The logo and banner in `branding/` are part of the project under the same license.
+GPL-3.0-only, see [LICENSE](LICENSE).
