@@ -1,0 +1,42 @@
+name: Bug report
+description: Something doesn't work as it should
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: And what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Minecraft, Forge, Limb Damage, YACL
+      placeholder: "1.20.1, Forge 47.4.10, Limb Damage 2.0.0, YACL 3.6.6"
+    validations:
+      required: true
+  - type: input
+    id: optional
+    attributes:
+      label: TACZ / Accurate Hitboxes versions
+      description: Leave empty if you don't use them
+  - type: dropdown
+    id: side
+    attributes:
+      label: Where does it happen?
+      options: [Singleplayer, Dedicated server, LAN]
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log and extra info
+      description: "Link or paste logs/latest.log. For wrong zones add `/limbdamage probe` output and lines from debug.logHits."

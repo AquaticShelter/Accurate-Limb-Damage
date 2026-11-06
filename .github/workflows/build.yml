@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # The Accurate Hitboxes jar is compile-only and isn't committed (see libs/README.md).
+      # Set the repository variable AH_JAR_URL to a direct download link of the 1.20.1 jar.
+      - name: Fetch Accurate Hitboxes
+        env:
+          AH_JAR_URL: ${{ vars.AH_JAR_URL }}
+        run: |
+          if ! ls libs/accuratehitboxes-*.jar >/dev/null 2>&1; then
+            if [ -z "$AH_JAR_URL" ]; then
+              echo "::error::No Accurate Hitboxes jar in libs/ and no AH_JAR_URL repository variable set."
+              exit 1
+            fi
+            curl -fL "$AH_JAR_URL" -o libs/accuratehitboxes-ci.jar
+          fi
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: limbdamage
+          path: build/libs/*.jar

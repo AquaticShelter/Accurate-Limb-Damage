@@ -1,0 +1,1 @@
+Call of Duty style limb damage for Forge 1.20.1. Every body part has its own damage number, TACZ guns get theirs per gun type, and you get a death recap and a training dummy.

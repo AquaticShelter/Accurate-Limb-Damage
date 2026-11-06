@@ -1,0 +1,27 @@
+<h1>Limb Damage</h1>
+<p>Hit the leg and it hurts less than the chest, the way it works in Call of Duty.</p>
+<p>Every body part has its own damage number. TACZ guns can have theirs per gun type, so a sniper can punish the chest while a pistol barely scratches an arm. When you die you get a recap of who hit you, with what, and where. And when you'd rather test your setup than wait for a fight, there's a training dummy you can dress up and shoot.</p>
+<p>Works with vanilla melee and projectiles. TACZ and Accurate Hitboxes are optional, and make hit locations exact.</p>
+
+<h2>What's in it</h2>
+<p><strong>Six hit zones.</strong> Head, chest, abdomen, arms, legs and feet, each with its own multiplier. Arms, legs and feet take 20% less by default, everything else is normal. Damage with no hit position (fall, fire, explosions, potions) is left alone.</p>
+<p><strong>Per gun type numbers (TACZ).</strong> Pistol, rifle, sniper, RPG, SMG, shotgun, MG. Fill in only what you want to change, everything else follows the global numbers.</p>
+<p><strong>Death recap.</strong> One strip per attacker with weapon, damage and hits, next to a body that shows where you got hit. A second strip lists the players you had hurt, with a KILL or DEAD badge by their name.</p>
+<p><strong>Training dummy.</strong> <code>/limbdamage dummy</code> spawns one. Right-click it to put armor, items, a pumpkin, an elytra on it, and set its health, damage reduction (0.1% steps), auto-heal and what happens when it dies. Hits show the zone, multiplier and damage, and a report lists every shot once you stop.</p>
+<p><strong>Fragile effect.</strong> Arms, legs and feet take full damage and regeneration waits.</p>
+<p><strong>Settings that make sense.</strong> Everything is in a YACL screen: damage sliders, zones, the dummy, and how the HUD looks. Damage reads as "damage taken off" in 0.1% steps (55.5% works). Servers use a plain file and <code>/limbdamage reload</code>.</p>
+<p><strong>Sharp HUD.</strong> The panels are drawn in real screen pixels, so they stay crisp at any GUI scale. You can even give the HUD your own font from a resource pack.</p>
+
+<h2>Requirements</h2>
+<ul>
+<li>Minecraft 1.20.1, Forge 47.4.10 or newer</li>
+<li>YACL 3.6.x (required)</li>
+<li>Optional: TACZ, Accurate Hitboxes</li>
+</ul>
+<p>Install it on the server and on clients. The server decides the damage, clients draw the feedback.</p>
+
+<h2>Coming from 1.x?</h2>
+<p>Install YACL, update the server and clients together, and your old settings are imported on first start.</p>
+
+<h2>Help</h2>
+<p>Setup, every option and troubleshooting are in the wiki. If a zone looks wrong, <code>/limbdamage probe</code> and <code>debug.logHits</code> in the config tell you why, and make a good bug report.</p>
