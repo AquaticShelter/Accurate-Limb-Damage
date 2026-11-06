@@ -34,7 +34,6 @@
 - One failed classification no longer turns off exact TACZ hit positions for the whole session.
 
 ## 1.10.0
-Verified against the TACZ 1.1.8-hotfix2 jar (bytecode read), not guessed:
 * **TACZ decides "headshot" from a vertical band only**: `eyeHeight - 0.25 < hit.y - feet < eyeHeight + 0.25` (about 1.37-1.87 for a
   player), with no lateral check and no knowledge of the model. That band includes the top ~0.6 px of the shoulders and ends 0.005 below the
   head's top edge. TACZ's `EntityHurtByGunEvent.Pre` exposes `setHeadshot(boolean)`; **headshotGuard now sets TACZ's flag to this mod's
